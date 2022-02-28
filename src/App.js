@@ -1,6 +1,6 @@
-import './App.css';
+import "./App.css";
 
-function App({name}) {
+function App({ name }) {
   return (
     <div className="App">
       <h1>Hello,{name}</h1>
