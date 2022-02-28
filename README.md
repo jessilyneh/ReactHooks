@@ -13,3 +13,4 @@ npm start
 
 - [array and object destructuring](https://github.com/Jeefelix/ReactHooks/commit/94e5c1bdaa197fd2092499f882052ed430691226)
 - [useState](https://github.com/Jeefelix/ReactHooks/commit/7e0a209625387a731d05a5f53b68abcb9cf24a73)
+- [a simple checkbox using useState and onChange](https://github.com/Jeefelix/ReactHooks/commit/d39b1f42fede20f391639797877ff75774cdbea0)
