@@ -1,43 +1,21 @@
-import React, {useState} from "react"; //useState is a function, this is why i use { }
+import React, {useState, useEffect} from "react"; //useState is a function, this is why i use { }
 import ReactDOM from "react-dom";
 import "./index.css";
-import {FaStar} from "react-icons/fa"
-
-const createArray = (length) => [
-  ...Array(length)];
-
-function Star({selected = false, onSelect}) {
-  return (
-    <FaStar
-    color={selected ? "yellow" : "gray"}
-    onClick={onSelect}
-    />
-  )
-}
-
-function StarRating({totalStars = 5}) { //default value, in case totalStars hasnt a value defined in return
-  const [selectedStars, setSelectedStars] = useState(0)
-
-  return (
-    <>
-    {
-      createArray(totalStars).map((_n,i) => (
-        <Star 
-          key={i}
-          selected={selectedStars > i} 
-          onSelect={()=> setSelectedStars(i + 1)}
-        />
-        )
-      )
-    }
-    <p>{selectedStars} of {totalStars}</p>
-    </>
-  )
-}
 
 function App() {
+  const [name, setName] = useState("Jess")
 
-  return <StarRating totalStars={10}/>
+  // runs after every update and render. Promote side effect
+  useEffect(() => {
+    document.title = `celebrate ${name}`
+  });
+
+  return(
+    <section>
+      <p>Congratulations, {name}!</p>
+      <button onClick={()=> setName("Rafael")}>Change winner</button>
+    </section>
+  )
 }
 
 ReactDOM.render(
