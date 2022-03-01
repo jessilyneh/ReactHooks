@@ -3,16 +3,20 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 export default function App() {
-  //first argument: what we want to do if setNumber has called?
-  // 0: the initial state
-  const [number, setNumber] = useReducer(
-    (number, newNumber) => number + newNumber,
-    0
-  );
+  const [checked, toggle] = useReducer(
+    (checked) => !checked, false);
 
-  return <h1 onClick={()=> setNumber(1)}>{number}</h1>;
+  return (
+    <div>
+    <input
+      type="checkbox"
+      value={checked}
+      onChange={toggle}
+    />
+    <p>{checked ? "checked" : "no checked"}</p>
+  </div>
+  )
 }
-
 
 ReactDOM.render(
   <React.StrictMode>
