@@ -1,31 +1,16 @@
-import React, {useState, useEffect} from "react"; //useState is a function, this is why i use { }
+import React, {useReducer} from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
 export default function App() {
-  const [data, setData] = useState([]);
-  
-  // removing the dependency array, useEffect called
-  // the endpoint 732 times in a few seconds
-  useEffect(() => {
-    fetch(`https://api.github.com/users`)
-      .then((response) => response.json())
-      .then(setData);
-    console.log("call API");
-  }, []);
+  //first argument: what we want to do if setNumber has called?
+  // 0: the initial state
+  const [number, setNumber] = useReducer(
+    (number, newNumber) => number + newNumber,
+    0
+  );
 
-  if (data) {
-    return (
-      <div>
-        <ul>
-          {data.map((user) => (
-            <li key={user.id}>{user.login}</li>
-          ))}
-        </ul>
-        <button onClick={() => setData([])}>Remove users</button>
-      </div>
-    );
-  }
+  return <h1 onClick={()=> setNumber(1)}>{number}</h1>;
 }
 
 
