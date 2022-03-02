@@ -21,4 +21,4 @@ npm start
 - [increment a number using useReducer](https://github.com/Jeefelix/ReactHooks/commit/edc59825975ed5df96756da2990e2585ddc4cacd)
 - [refactoring useState to UseReducer](https://github.com/Jeefelix/ReactHooks/commit/c2bb644cf1c81f723dd709a411ca40d6380f0d6e)
 - [useReducer to dispatch actions](https://github.com/Jeefelix/ReactHooks/commit/88157e0e30b4e88ff2212c69c5a445ad13d59686)
-- [a very simple form with useRef](https://github.com/Jeefelix/ReactHooks/commit/(eafd81baf82f0051bcda924ba9f716277fbd960e)
+- [simple form with useRef](https://github.com/Jeefelix/ReactHooks/commit/eafd81baf82f0051bcda924ba9f716277fbd960e)
