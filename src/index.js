@@ -1,36 +1,31 @@
-import React, {useReducer} from "react";
+import React, {useRef} from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-const initialState = {
-  message: "hello"
-};
-
-// send actions
-function reducer(state, action) {
-  // eslint-disable-next-line default-case
-  switch (action.type) {
-    case "yell":
-      return {
-        message: `HEY, my default message was ${state.message}`
-      };
-    case "yup":
-      return {
-        message: `YO, this is my default msg: ${state.message}`
-      };
-  }
-}
 export default function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const sound = useRef();
+  const date = useRef();
+
+  const submit = (e) => {
+    e.preventDefault();
+    const soundValue = sound.current.value;
+    const dateValue = date.current.value;
+    alert(`${soundValue} born in ${dateValue}`);
+    sound.current.value = "";
+    date.current.value = "";
+  };
 
   return (
-    <>
-      <p>Message:{state.message}</p>
-      <button onClick={() => dispatch({ type: "yell" })}>yell</button>
-      <button onClick={() => dispatch({ type: "yup" })}>yup</button>
-    </>
+    <form onSubmit={submit}>
+      <input ref={sound} type="text" placeholder="name..." />
+
+      <input ref={date} type="date" />
+
+      <button>Submit</button>
+    </form>
   );
 }
+
 
 ReactDOM.render(
   <React.StrictMode>
