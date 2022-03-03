@@ -1,42 +1,38 @@
-import React, {useState} from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import { useInput } from "./useInput";
 
+// useInput will received a value (nameProps)
+// and atribute the initial value (resetName)
 export default function App() {
-  const [name, setName] = useState("")
-  const [birth, setBirth]= useState("")
+  const [nameProps, resetName] = useInput("");
+  const [birthProps, resetBirth] = useInput("");
 
-  //controlled components are those in which
-  // form data is handled by the component's state
   const submit = (e) => {
     e.preventDefault();
-    alert(`${name} was born in ${birth}`);
-    setName("")
-    setBirth("")
+    alert(`${nameProps.value} was born in ${birthProps.value}`);
+    resetBirth();
+    resetName();
   };
+
+  // just need pass nameProps to value ({value,
+  // onChange}, resetValue) inside {...nameProps}
 
   return (
     <form onSubmit={submit}>
-      <input value={name} 
-      type="text" 
-      placeholder="name..." 
-      onChange={(e)=> setName(e.target.value)}
-      />
+      <input {...nameProps} type="text" placeholder="name..." />
 
-      <input value={birth}
-       type="date"
-       onChange={(e)=> setBirth(e.target.value)}
-        />
+      <input {...birthProps} type="date" />
 
       <button>Submit</button>
     </form>
   );
 }
 
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
   document.getElementById("root")
-)
+);
