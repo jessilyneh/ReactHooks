@@ -1,25 +1,32 @@
-import React, {useRef} from "react";
+import React, {useState} from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
 export default function App() {
-  const sound = useRef();
-  const date = useRef();
+  const [name, setName] = useState("")
+  const [birth, setBirth]= useState("")
 
+  //controlled components are those in which
+  // form data is handled by the component's state
   const submit = (e) => {
     e.preventDefault();
-    const soundValue = sound.current.value;
-    const dateValue = date.current.value;
-    alert(`${soundValue} born in ${dateValue}`);
-    sound.current.value = "";
-    date.current.value = "";
+    alert(`${name} was born in ${birth}`);
+    setName("")
+    setBirth("")
   };
 
   return (
     <form onSubmit={submit}>
-      <input ref={sound} type="text" placeholder="name..." />
+      <input value={name} 
+      type="text" 
+      placeholder="name..." 
+      onChange={(e)=> setName(e.target.value)}
+      />
 
-      <input ref={date} type="date" />
+      <input value={birth}
+       type="date"
+       onChange={(e)=> setBirth(e.target.value)}
+        />
 
       <button>Submit</button>
     </form>
