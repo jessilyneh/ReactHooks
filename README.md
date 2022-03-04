@@ -6,8 +6,15 @@ I left the steps commented out so the app doesn't break.<br/>
 With each new commit, I will test a different concept.<br/>
 Its simplier examples.<br/>
 
-#### run project
-npm start
+### run project
+npm start </br>
+
+or create a simple React project on Code Sandbox:</br>
+
+``` ssh
+react.new
+```
+
 
 ### content:
 
