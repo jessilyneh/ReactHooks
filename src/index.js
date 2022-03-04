@@ -1,26 +1,22 @@
 import React, { createContext } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import App from "./App";
 
-export const TreesContext = createContext();
+export const HeadachesContext = createContext();
 
-const trees = [
+//make all this data acessible to all app
+const headaches = [
   { id: "1", type: "migraines" },
   { id: "2", type: "digestive problem" },
   { id: "3", type: "sinus headaches" },
   { id: "4", type: "tension" }
 ];
-export default function App() {
-  return (
-    <div>
-      <h1>Types of headaches</h1>
-    </div>
-  );
-}
 
+// Pass data down to the child components
 ReactDOM.render(
-  <TreesContext.Provider value={{ trees }}>
+  <HeadachesContext.Provider value={{ headaches }}>
     <App />
-  </TreesContext.Provider>,
+  </HeadachesContext.Provider>,
   document.getElementById("root")
 );
