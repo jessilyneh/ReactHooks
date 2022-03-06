@@ -1,11 +1,12 @@
-import React, { createContext } from "react";
+import React, { createContext, useContext } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
-export const HeadachesContext = createContext();
+const HeadachesContext = createContext();
+//refactoring in a custom component to reuse
+export const useHeadaches = () => useContext(HeadachesContext);
 
-//make all this data acessible to all app
 const headaches = [
   { id: "1", type: "migraines" },
   { id: "2", type: "digestive problem" },
