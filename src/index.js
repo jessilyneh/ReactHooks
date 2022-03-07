@@ -1,23 +1,23 @@
-import React, { createContext, useContext } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import { useFetch } from "./useFetch";
 
-const HeadachesContext = createContext();
-//refactoring in a custom component to reuse
-export const useHeadaches = () => useContext(HeadachesContext);
+function App({ login }) {
+  const { loading, error, data } = useFetch(
+    `https://api.github.com/users/${login}`
+  );
 
-const headaches = [
-  { id: "1", type: "migraines" },
-  { id: "2", type: "digestive problem" },
-  { id: "3", type: "sinus headaches" },
-  { id: "4", type: "tension" }
-];
+  if (loading) return <h1>error</h1>;
+  if (error) return <pre>{JSON.stringfy(error, null, 2)}</pre>;
+  return (
+    <div>
+      <img src={data.avatar_url} alt={data.login} />
+      <h1>{data.login}</h1>
+      {data.name && <p>{data.name}</p>}
+      {data.location && <p>{data.location}</p>}
+    </div>
+  );
+}
 
-// Pass data down to the child components
-ReactDOM.render(
-  <HeadachesContext.Provider value={{ headaches }}>
-    <App />
-  </HeadachesContext.Provider>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App login="Jeefelix" />, document.getElementById("root"));

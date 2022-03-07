@@ -6,15 +6,8 @@ I left the steps commented out so the app doesn't break.<br/>
 With each new commit, I will test a different concept.<br/>
 Its simplier examples.<br/>
 
-### run project
-npm start </br>
-
-or create a simple React project on Code Sandbox:</br>
-
-``` ssh
-react.new
-```
-
+#### run project
+npm start
 
 ### content:
 
@@ -29,6 +22,3 @@ react.new
 - [refactoring useState to UseReducer](https://github.com/Jeefelix/ReactHooks/commit/c2bb644cf1c81f723dd709a411ca40d6380f0d6e)
 - [useReducer to dispatch actions](https://github.com/Jeefelix/ReactHooks/commit/88157e0e30b4e88ff2212c69c5a445ad13d59686)
 - [simple form with useRef](https://github.com/Jeefelix/ReactHooks/commit/eafd81baf82f0051bcda924ba9f716277fbd960e)
-- [controlled components using useState](https://github.com/Jeefelix/ReactHooks/commit/103f5b811ec987bd8ba9377fecaef92349f61b28)
-- [custom hook reusing form logic](https://github.com/Jeefelix/ReactHooks/commit/29fe9caf4f6447c3e9d8493f87b06a05f84495c9)
-- [useContext to access data from any child component](https://github.com/Jeefelix/ReactHooks/commit/75a9b2cf482a16491e452b290503bdaa33dfd6d2)
