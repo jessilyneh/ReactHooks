@@ -5,8 +5,17 @@ Project created to practice the concepts of react hooks at all stages and in det
 I left the steps commented out so the app doesn't break.<br/>
 With each new commit, I will test a different concept.<br/>
 Its simplier examples.<br/>
+If you are looking for more didactic usage examples (this repository is for personal study only,I will not provide clear explanations)<br/>
+I suggest studying through this site, which has very complete examples to study hooks:<br/>
 
-#### run project
+### [useHooks](https://usehooks.com/)
+
+This website provides easy to understand code examples to help you learn how hooks work and inspire you to take advantage of them in your next project.
+
+### tip:
+Try testing these examples in the [code sandbox](https://codesandbox.io/s/new?utm_source=dotnew) as the project is small and the examples are short.
+
+### run project locally
 npm start
 
 ### content:
@@ -22,3 +31,9 @@ npm start
 - [refactoring useState to UseReducer](https://github.com/Jeefelix/ReactHooks/commit/c2bb644cf1c81f723dd709a411ca40d6380f0d6e)
 - [useReducer to dispatch actions](https://github.com/Jeefelix/ReactHooks/commit/88157e0e30b4e88ff2212c69c5a445ad13d59686)
 - [simple form with useRef](https://github.com/Jeefelix/ReactHooks/commit/eafd81baf82f0051bcda924ba9f716277fbd960e)
+- [a controlled component with useState](https://github.com/Jeefelix/ReactHooks/commit/103f5b811ec987bd8ba9377fecaef92349f61b28)
+- [create a custom hook reuse form logic](https://github.com/Jeefelix/ReactHooks/commit/29fe9caf4f6447c3e9d8493f87b06a05f84495c9)
+- [useContext to placing data in context](https://github.com/Jeefelix/ReactHooks/commit/10de4e87c7e992a595fc11b137132adb81328d71)
+- [useContext to access data from any child components](https://github.com/Jeefelix/ReactHooks/commit/75a9b2cf482a16491e452b290503bdaa33dfd6d2)
+- [transform a useContext in custom hook](https://github.com/Jeefelix/ReactHooks/commit/61346246f4ee31f657ae14ed0882659edd96d4c3)
+- [custom hook to fetch data](https://github.com/Jeefelix/ReactHooks/commit/5ea702e279bedf05e136a1cb9a180d4b7d38b643)
